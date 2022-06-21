@@ -41,6 +41,7 @@ namespace IQup
         private void label2_Click(object sender, EventArgs e)
         {
             dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText("D:\\Code\\IQup\\test.json"));
+            label2.Text = jsonFile["Q1"]["CorrectAnswers"]["A1"];
             
         }
     }

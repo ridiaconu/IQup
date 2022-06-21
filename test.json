@@ -7,11 +7,13 @@
     "A2": "69",
     "A3": "420",
     "A4": "muie dinamo",
-    "CorrectAnswers": [
-      "A1",
-      "A4"
-    ],
-    "MultipleAnswers": true
+    "CorrectAnswers": 
+      {
+        "A1": true,
+        "A2": false,
+        "A3": false,
+        "A4": false
+      }
   },
   "Q2": {
     "Statement": "2+2=?",
@@ -19,10 +21,13 @@
     "A2": "morbius",
     "A3": "turi ip ip ip",
     "A4": "amogus",
-    "CorrectAnswers": [
-      "A1"
-    ],
-    "MultipleAnswers": false
+    "CorrectAnswers": 
+      {
+        "A1": true,
+        "A2": false,
+        "A3": false,
+        "A4": false
+      }
   },
   "Q3": {
     "Statement": "I'm in your walls",
@@ -30,12 +35,12 @@
     "A2": "Sus",
     "A3": "Nebunu Weed",
     "A4": "muie dinamo",
-    "CorrectAnswers": [
-      "A1",
-      "A2",
-      "A3",
-      "A4"
-    ],
-    "MultipleAnswers": true
+    "CorrectAnswers":
+      {
+        "A1": true,
+        "A2": true,
+        "A3": true,
+        "A4": true
+      }
   }
 }

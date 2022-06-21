@@ -55,6 +55,7 @@
             this.ans1.TabIndex = 1;
             this.ans1.Text = "Answer1";
             this.ans1.UseVisualStyleBackColor = true;
+            this.ans1.CheckedChanged += new System.EventHandler(this.ans1_CheckedChanged);
             // 
             // ans2
             // 
@@ -65,6 +66,7 @@
             this.ans2.TabIndex = 2;
             this.ans2.Text = "Answer2";
             this.ans2.UseVisualStyleBackColor = true;
+            this.ans2.CheckedChanged += new System.EventHandler(this.ans2_CheckedChanged);
             // 
             // ans3
             // 
@@ -75,6 +77,7 @@
             this.ans3.TabIndex = 3;
             this.ans3.Text = "Answer3";
             this.ans3.UseVisualStyleBackColor = true;
+            this.ans3.CheckedChanged += new System.EventHandler(this.ans3_CheckedChanged);
             // 
             // ans4
             // 
@@ -85,6 +88,7 @@
             this.ans4.TabIndex = 4;
             this.ans4.Text = "Answer4";
             this.ans4.UseVisualStyleBackColor = true;
+            this.ans4.CheckedChanged += new System.EventHandler(this.ans4_CheckedChanged);
             // 
             // btn_next
             // 
@@ -108,6 +112,7 @@
             this.Controls.Add(this.ans1);
             this.Controls.Add(this.question);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IQup";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
