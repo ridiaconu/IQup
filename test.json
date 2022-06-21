@@ -1,0 +1,41 @@
+{
+  "Testname": "Math101",
+  "NoQuestions": 3,
+  "Q1": {
+    "Statement": "1+1=?",
+    "A1": "2",
+    "A2": "69",
+    "A3": "420",
+    "A4": "muie dinamo",
+    "CorrectAnswers": [
+      "A1",
+      "A4"
+    ],
+    "MultipleAnswers": true
+  },
+  "Q2": {
+    "Statement": "2+2=?",
+    "A1": "4",
+    "A2": "morbius",
+    "A3": "turi ip ip ip",
+    "A4": "amogus",
+    "CorrectAnswers": [
+      "A1"
+    ],
+    "MultipleAnswers": false
+  },
+  "Q3": {
+    "Statement": "I'm in your walls",
+    "A1": "Amogus",
+    "A2": "Sus",
+    "A3": "Nebunu Weed",
+    "A4": "muie dinamo",
+    "CorrectAnswers": [
+      "A1",
+      "A2",
+      "A3",
+      "A4"
+    ],
+    "MultipleAnswers": true
+  }
+}

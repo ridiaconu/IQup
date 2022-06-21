@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace IQup
 {
@@ -24,7 +27,21 @@ namespace IQup
 
         private void begin_btn_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Form2 f2 = new Form2();
+            f2.Show();
 
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText("D:\\Code\\IQup\\test.json"));
+            
         }
     }
 }
