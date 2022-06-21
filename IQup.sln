@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32602.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IQup", "IQup.csproj", "{704752BF-5A3F-4811-8FCC-90901FAA07CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{704752BF-5A3F-4811-8FCC-90901FAA07CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704752BF-5A3F-4811-8FCC-90901FAA07CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704752BF-5A3F-4811-8FCC-90901FAA07CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704752BF-5A3F-4811-8FCC-90901FAA07CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B82C0D3B-6256-42C9-87E8-0A772F63A4BA}
+	EndGlobalSection
+EndGlobal
