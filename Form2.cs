@@ -17,6 +17,7 @@ namespace IQup
     {
         int i = 1;
         bool A1, A2, A3, A4;
+        float score = 0;
         dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText("D:\\Code\\IQup\\test.json")); // to be replaced with relative path
         public Form2()
         {
@@ -83,6 +84,10 @@ namespace IQup
 
         private void btn_next_Click(object sender, EventArgs e)
         {
+            if (btn_next.Text == "Finish Test")
+            {
+                System.Windows.Forms.Application.Exit();
+            }
             ansval();
             int ilimit = jsonFile["NoQuestions"];
             if (i + 1 <= ilimit)
@@ -92,7 +97,7 @@ namespace IQup
             }
             else
             {
-                System.Windows.Forms.Application.Exit();
+                scorecheck();
             }
 
         }
@@ -142,12 +147,39 @@ namespace IQup
             if(corect==true)
             {
                 MessageBox.Show("Correct!", "Message", MessageBoxButtons.OK);
+                score++;
             }
             else
             {
                 MessageBox.Show("Wrong!", "Message", MessageBoxButtons.OK);
             }
 
+        }
+
+        private void scorecheck()
+        {
+            question.Enabled = false;
+            question.Visible = false;
+            ans1.Enabled = false;
+            ans1.Visible = false;
+            ans2.Enabled = false;
+            ans2.Visible = false;
+            ans3.Enabled = false;
+            ans3.Visible = false;
+            ans4.Enabled = false;
+            ans4.Visible = false;
+            btn_next.Text = "Finish Test";
+            float noquestions = jsonFile["NoQuestions"];
+            float totalscore = (score / noquestions) * 100;
+            Math.Round(totalscore, 1);
+            score_lbl.Enabled = true;
+            score_lbl.Visible = true;
+            string displayscore = totalscore.ToString();
+            String.Format("{0:0.##}", displayscore);
+            displayscore = displayscore + "%";
+            displayscore_lbl.Text = displayscore;
+            displayscore_lbl.Visible = true;
+            displayscore_lbl.Enabled = true;
         }
     }
 }

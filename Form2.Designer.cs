@@ -34,6 +34,8 @@
             this.ans3 = new System.Windows.Forms.CheckBox();
             this.ans4 = new System.Windows.Forms.CheckBox();
             this.btn_next = new System.Windows.Forms.Button();
+            this.score_lbl = new System.Windows.Forms.Label();
+            this.displayscore_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // question
@@ -100,11 +102,36 @@
             this.btn_next.UseVisualStyleBackColor = true;
             this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
+            // score_lbl
+            // 
+            this.score_lbl.AutoSize = true;
+            this.score_lbl.Enabled = false;
+            this.score_lbl.Location = new System.Drawing.Point(306, 204);
+            this.score_lbl.Name = "score_lbl";
+            this.score_lbl.Size = new System.Drawing.Size(63, 13);
+            this.score_lbl.TabIndex = 6;
+            this.score_lbl.Text = "Your Score:";
+            this.score_lbl.Visible = false;
+            // 
+            // displayscore_lbl
+            // 
+            this.displayscore_lbl.AutoSize = true;
+            this.displayscore_lbl.Enabled = false;
+            this.displayscore_lbl.ForeColor = System.Drawing.Color.Red;
+            this.displayscore_lbl.Location = new System.Drawing.Point(397, 204);
+            this.displayscore_lbl.Name = "displayscore_lbl";
+            this.displayscore_lbl.Size = new System.Drawing.Size(33, 13);
+            this.displayscore_lbl.TabIndex = 7;
+            this.displayscore_lbl.Text = "score";
+            this.displayscore_lbl.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.displayscore_lbl);
+            this.Controls.Add(this.score_lbl);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.ans4);
             this.Controls.Add(this.ans3);
@@ -128,5 +155,7 @@
         private System.Windows.Forms.CheckBox ans3;
         private System.Windows.Forms.CheckBox ans4;
         private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Label score_lbl;
+        private System.Windows.Forms.Label displayscore_lbl;
     }
 }
