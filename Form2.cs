@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
-
+using System.Reflection;
 namespace IQup
 {
     public partial class Form2 : Form
@@ -18,7 +18,10 @@ namespace IQup
         int i = 1;
         bool A1, A2, A3, A4;
         float score = 0;
-        dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText("D:\\Code\\IQup\\test.json")); // to be replaced with relative path
+        //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Tests\test.json");
+        //string[] files = File.ReadAllText(path);
+
+        dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText(@"Tests\math101.json")); 
         public Form2()
         {
             InitializeComponent();

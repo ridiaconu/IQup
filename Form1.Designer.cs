@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.begin_btn = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +56,7 @@
             // 
             // begin_btn
             // 
-            this.begin_btn.Location = new System.Drawing.Point(330, 242);
+            this.begin_btn.Location = new System.Drawing.Point(330, 334);
             this.begin_btn.Name = "begin_btn";
             this.begin_btn.Size = new System.Drawing.Size(90, 30);
             this.begin_btn.TabIndex = 2;
@@ -63,11 +64,25 @@
             this.begin_btn.UseVisualStyleBackColor = true;
             this.begin_btn.Click += new System.EventHandler(this.begin_btn_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            "Math101",
+            "Among US",
+            "Racial Slurs Test"});
+            this.listBox1.Location = new System.Drawing.Point(318, 211);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 3;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.begin_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -84,6 +99,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button begin_btn;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
