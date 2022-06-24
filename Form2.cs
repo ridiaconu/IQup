@@ -110,6 +110,11 @@ namespace IQup
             this.Text = jsonFile["Testname"];
         }
 
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
         private void ans1_CheckedChanged(object sender, EventArgs e)
         {
             if (ans1.Checked==true)
