@@ -39,14 +39,71 @@ namespace IQup
         {
             string Question_num = "Q" + i.ToString();
             question.Text = jsonFile[Question_num]["Statement"];
-            ans1.Text = jsonFile[Question_num]["A1"];
-            ans1.Checked = false;
-            ans2.Text = jsonFile[Question_num]["A2"];
-            ans2.Checked = false;
-            ans3.Text = jsonFile[Question_num]["A3"];
-            ans3.Checked = false;
-            ans4.Text = jsonFile[Question_num]["A4"];
-            ans4.Checked = false;
+            bool mAns = jsonFile[Question_num]["MultipleAnswers"];
+            if(mAns==false)
+            {
+                ans1.Enabled = false;
+                ans1.Visible = false;
+                ans1.Checked = false;
+                ans2.Enabled = false;
+                ans2.Visible = false;
+                ans2.Checked = false;
+                ans3.Enabled = false;
+                ans3.Visible = false;
+                ans3.Checked = false;
+                ans4.Enabled = false;
+                ans4.Visible = false;
+                ans4.Checked = false;
+                ans1_radio.Enabled = true;
+                ans1_radio.Visible = true;
+                ans1_radio.Text = jsonFile[Question_num]["A1"];
+                ans1_radio.Checked = false;
+                ans2_radio.Enabled = true;
+                ans2_radio.Visible = true;
+                ans2_radio.Text = jsonFile[Question_num]["A2"];
+                ans2_radio.Checked = false;
+                ans3_radio.Enabled = true;
+                ans3_radio.Visible = true;
+                ans3_radio.Text = jsonFile[Question_num]["A3"];
+                ans3_radio.Checked = false;
+                ans4_radio.Enabled = true;
+                ans4_radio.Visible = true;
+                ans4_radio.Text = jsonFile[Question_num]["A4"];
+                ans4_radio.Checked = false;
+
+            }
+            else
+            {
+                ans1_radio.Enabled = false;
+                ans1_radio.Visible = false;
+                ans1_radio.Checked = false;
+                ans2_radio.Enabled = false;
+                ans2_radio.Visible = false;
+                ans2_radio.Checked = false;
+                ans3_radio.Enabled = false;
+                ans3_radio.Visible = false;
+                ans3_radio.Checked = false;
+                ans4_radio.Enabled = false;
+                ans4_radio.Visible = false;
+                ans4_radio.Checked = false;
+                ans1.Enabled = true;
+                ans1.Visible = true;
+                ans1.Text = jsonFile[Question_num]["A1"];
+                ans1.Checked = false;
+                ans2.Enabled = true;
+                ans2.Visible = true;
+                ans2.Text = jsonFile[Question_num]["A2"];
+                ans2.Checked = false;
+                ans3.Enabled = true;
+                ans3.Visible = true;
+                ans3.Text = jsonFile[Question_num]["A3"];
+                ans3.Checked = false;
+                ans4.Enabled = true;
+                ans4.Visible = true;
+                ans4.Text = jsonFile[Question_num]["A4"];
+                ans4.Checked = false;
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,6 +177,54 @@ namespace IQup
             System.Windows.Forms.Application.Exit();
         }
 
+        private void ans1_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ans1_radio.Checked == true)
+            {
+                A1 = true;
+            }
+            else
+            {
+                A1 = false;
+            }
+        }
+
+        private void ans2_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ans2_radio.Checked == true)
+            {
+                A2 = true;
+            }
+            else
+            {
+                A2 = false;
+            }
+        }
+
+        private void ans3_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ans3_radio.Checked == true)
+            {
+                A3 = true;
+            }
+            else
+            {
+                A3 = false;
+            }
+        }
+
+        private void ans4_radio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ans4_radio.Checked == true)
+            {
+                A4 = true;
+            }
+            else
+            {
+                A4 = false;
+            }
+        }
+
         private void ans1_CheckedChanged(object sender, EventArgs e)
         {
             if (ans1.Checked==true)
@@ -181,6 +286,14 @@ namespace IQup
             ans3.Visible = false;
             ans4.Enabled = false;
             ans4.Visible = false;
+            ans1_radio.Enabled = false;
+            ans2_radio.Enabled = false;
+            ans3_radio.Enabled = false;
+            ans4_radio.Enabled = false;
+            ans1_radio.Visible = false;
+            ans2_radio.Visible = false;
+            ans3_radio.Visible = false;
+            ans4_radio.Visible = false;
             btn_next.Text = "Finish Test";
             float noquestions = jsonFile["NoQuestions"];
             float totalscore = (score / noquestions) * 100;

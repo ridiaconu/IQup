@@ -30,9 +30,17 @@ namespace IQup
 
         private void begin_btn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form2 f2 = new Form2(testname);
-            f2.Show();
+            if(testname!=null)
+            {
+                this.Hide();
+                Form2 f2 = new Form2(testname);
+                f2.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please select a test file first!", "Error");
+            }
+
             
         }
 
