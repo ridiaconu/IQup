@@ -15,16 +15,21 @@ namespace IQup
 {
     public partial class Form2 : Form
     {
+        
         int i = 1;
         bool A1, A2, A3, A4;
         float score = 0;
         //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Tests\test.json");
         //string[] files = File.ReadAllText(path);
+        public string testname;
+        dynamic jsonFile;
 
-        dynamic jsonFile = JsonConvert.DeserializeObject(File.ReadAllText(@"Tests\math101.json")); 
-        public Form2()
+        
+        public Form2(string testname)
         {
             InitializeComponent();
+            this.testname = testname;
+            jsonFile = JsonConvert.DeserializeObject(File.ReadAllText(testname));
             Get_Question();
 
 

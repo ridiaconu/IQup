@@ -15,6 +15,9 @@ namespace IQup
 {
     public partial class Form1 : Form
     {
+        public OpenFileDialog ofd;
+        public string testname;
+
         public Form1()
         {
             InitializeComponent();
@@ -28,7 +31,7 @@ namespace IQup
         private void begin_btn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 f2 = new Form2();
+            Form2 f2 = new Form2(testname);
             f2.Show();
             
         }
@@ -50,12 +53,20 @@ namespace IQup
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            ofd = new OpenFileDialog();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             System.Windows.Forms.Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                testname= ofd.FileName;
+            }
         }
     }
 }
