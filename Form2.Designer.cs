@@ -40,6 +40,8 @@
             this.ans2_radio = new System.Windows.Forms.RadioButton();
             this.ans3_radio = new System.Windows.Forms.RadioButton();
             this.ans4_radio = new System.Windows.Forms.RadioButton();
+            this.usr_txt = new System.Windows.Forms.TextBox();
+            this.usr_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // question
@@ -185,11 +187,30 @@
             this.ans4_radio.UseVisualStyleBackColor = true;
             this.ans4_radio.CheckedChanged += new System.EventHandler(this.ans4_radio_CheckedChanged);
             // 
+            // usr_txt
+            // 
+            this.usr_txt.Location = new System.Drawing.Point(495, 248);
+            this.usr_txt.Name = "usr_txt";
+            this.usr_txt.Size = new System.Drawing.Size(100, 22);
+            this.usr_txt.TabIndex = 12;
+            // 
+            // usr_lbl
+            // 
+            this.usr_lbl.AutoSize = true;
+            this.usr_lbl.Location = new System.Drawing.Point(409, 251);
+            this.usr_lbl.Name = "usr_lbl";
+            this.usr_lbl.Size = new System.Drawing.Size(70, 16);
+            this.usr_lbl.TabIndex = 13;
+            this.usr_lbl.Text = "Username";
+            this.usr_lbl.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.usr_lbl);
+            this.Controls.Add(this.usr_txt);
             this.Controls.Add(this.ans4_radio);
             this.Controls.Add(this.ans3_radio);
             this.Controls.Add(this.ans2_radio);
@@ -227,5 +248,7 @@
         private System.Windows.Forms.RadioButton ans2_radio;
         private System.Windows.Forms.RadioButton ans3_radio;
         private System.Windows.Forms.RadioButton ans4_radio;
+        private System.Windows.Forms.TextBox usr_txt;
+        private System.Windows.Forms.Label usr_lbl;
     }
 }

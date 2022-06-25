@@ -17,7 +17,7 @@ namespace IQup
     {
         public OpenFileDialog ofd;
         public string testname;
-
+        public string username;
         public Form1()
         {
             InitializeComponent();
@@ -30,17 +30,20 @@ namespace IQup
 
         private void begin_btn_Click(object sender, EventArgs e)
         {
-            if(testname!=null)
+            if(testname!=null&&username!=null)
             {
                 this.Hide();
-                Form2 f2 = new Form2(testname);
+                Form2 f2 = new Form2(testname, username);
                 f2.Show();
             }
-            else
+            if(testname==null)
             {
-                MessageBox.Show("Please select a test file first!", "Error");
+                MessageBox.Show("Please select a test file!", "Error");
             }
-
+            if(username==null||username=="")
+            {
+                MessageBox.Show("Please select a user name!", "Error");
+            }
             
         }
 
@@ -75,6 +78,11 @@ namespace IQup
             {
                 testname= ofd.FileName;
             }
+        }
+
+        private void username_tbox_TextChanged(object sender, EventArgs e)
+        {
+            username=username_tbox.Text;
         }
     }
 }

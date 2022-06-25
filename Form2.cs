@@ -17,21 +17,29 @@ namespace IQup
     {
         
         int i = 1;
+        public float totalscore;
         bool A1, A2, A3, A4;
         float score = 0;
         //string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), @"Tests\test.json");
         //string[] files = File.ReadAllText(path);
         public string testname;
+        public string username;
         dynamic jsonFile;
+        
 
         
-        public Form2(string testname)
+        public Form2(string testname, string username)
         {
             InitializeComponent();
+            usr_lbl.Enabled = false;
+            usr_lbl.Visible = false;
+            usr_txt.Enabled = false;
+            usr_txt.Visible = false;
             this.testname = testname;
+            this.username = username;
             jsonFile = JsonConvert.DeserializeObject(File.ReadAllText(testname));
             Get_Question();
-
+            
 
         }
 
@@ -151,19 +159,48 @@ namespace IQup
         {
             if (btn_next.Text == "Finish Test")
             {
-                System.Windows.Forms.Application.Exit();
-            }
-            ansval();
-            int ilimit = jsonFile["NoQuestions"];
-            if (i + 1 <= ilimit)
-            {
-                i++;
-                Get_Question();
+               if(File.Exists("score.txt")==false)
+                {
+                    //File.Create("score.txt");
+                    using (StreamWriter sw = File.AppendText("score.txt"))
+                    {
+                        sw.WriteLine("Username: " + username);
+                        sw.WriteLine("Testname: " + jsonFile["Testname"]);
+                        sw.WriteLine("Score: " + totalscore);
+                        sw.WriteLine("\n");
+                        
+                    }
+                    Application.Exit();
+                }
+               else
+                {
+                    using (StreamWriter sw = File.AppendText("score.txt"))
+                    {
+                        sw.WriteLine("Username: " + username);
+                        sw.WriteLine("Testname: " + jsonFile["Testname"]);
+                        sw.WriteLine("Score: " + totalscore);
+                        sw.WriteLine("\n");
+                    }
+                    System.Windows.Forms.Application.Exit();
+                }
+
+                
             }
             else
             {
-                scorecheck();
+                ansval();
+                int ilimit = jsonFile["NoQuestions"];
+                if (i + 1 <= ilimit)
+                {
+                    i++;
+                    Get_Question();
+                }
+                else
+                {
+                    scorecheck();
+                }
             }
+
 
         }
 
@@ -223,6 +260,11 @@ namespace IQup
             {
                 A4 = false;
             }
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
         }
 
         private void ans1_CheckedChanged(object sender, EventArgs e)
@@ -296,7 +338,7 @@ namespace IQup
             ans4_radio.Visible = false;
             btn_next.Text = "Finish Test";
             float noquestions = jsonFile["NoQuestions"];
-            float totalscore = (score / noquestions) * 100;
+            totalscore = (score / noquestions) * 100;
             Math.Round(totalscore, 1);
             score_lbl.Enabled = true;
             score_lbl.Visible = true;

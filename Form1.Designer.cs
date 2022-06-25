@@ -33,6 +33,8 @@
             this.begin_btn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.username_tbox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -60,7 +62,7 @@
             // begin_btn
             // 
             this.begin_btn.Location = new System.Drawing.Point(429, 354);
-            this.begin_btn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.begin_btn.Margin = new System.Windows.Forms.Padding(4);
             this.begin_btn.Name = "begin_btn";
             this.begin_btn.Size = new System.Drawing.Size(120, 37);
             this.begin_btn.TabIndex = 2;
@@ -82,16 +84,35 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // username_tbox
+            // 
+            this.username_tbox.Location = new System.Drawing.Point(91, 9);
+            this.username_tbox.Name = "username_tbox";
+            this.username_tbox.Size = new System.Drawing.Size(162, 22);
+            this.username_tbox.TabIndex = 4;
+            this.username_tbox.TextChanged += new System.EventHandler(this.username_tbox_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(73, 16);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Username:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.username_tbox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.begin_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "IQup";
@@ -109,6 +130,8 @@
         private System.Windows.Forms.Button begin_btn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox username_tbox;
+        private System.Windows.Forms.Label label3;
     }
 }
 
